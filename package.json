@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Social Network for developers",
   "main": "server.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server"
+  },
   "keywords": [],
   "author": "Yong Lee",
   "license": "MIT",
