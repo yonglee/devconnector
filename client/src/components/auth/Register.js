@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -13,12 +15,12 @@ const Register = () => {
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const onSubmit = e => {
+  const onSubmit = async e => {
     e.preventDefault();
     if (password !== password2) {
       console.log('Passwords do not match');
     } else {
-      console.log(formData);
+      console.log('SUCCESS');
     }
   };
 
@@ -37,6 +39,7 @@ const Register = () => {
             value={name}
             onChange={e => onChange(e)}
             required
+            autoComplete="true"
           />
         </div>
         <div className="form-group">
@@ -46,6 +49,7 @@ const Register = () => {
             name="email"
             value={email}
             onChange={e => onChange(e)}
+            autoComplete="true"
           />
           <small className="form-text">
             This site uses Gravatar so if you want a profile image, use a
@@ -60,6 +64,7 @@ const Register = () => {
             minLength="6"
             value={password}
             onChange={e => onChange(e)}
+            autoComplete="true"
           />
         </div>
         <div className="form-group">
@@ -69,12 +74,13 @@ const Register = () => {
             name="password2"
             onChange={e => onChange(e)}
             minLength="6"
+            autoComplete="true"
           />
         </div>
         <input type="submit" className="btn btn-primary" value="Register" />
       </form>
       <p className="my-1">
-        Already have an account? <a href="login.html">Sign In</a>
+        Already have an account? <Link to="/login">Sign In</Link>
       </p>
     </>
   );
