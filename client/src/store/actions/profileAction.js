@@ -2,6 +2,7 @@ import axios from 'axios';
 import { setAlert } from './alertAction';
 import {
   GET_PROFILE,
+  GET_PROFILES,
   PROFILE_ERROR,
   UPDATE_PROFILE,
   CLEAR_PROFILE,
@@ -33,7 +34,7 @@ export const getProfiles = () => async dispatch => {
     const res = await axios.get('/api/profile');
 
     dispatch({
-      type: GET_PROFILE,
+      type: GET_PROFILES,
       payload: res.data
     });
   } catch (err) {
