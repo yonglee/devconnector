@@ -4,9 +4,9 @@ const { check, validationResult } = require('express-validator');
 const auth = require('../../middleware/auth');
 
 // bring models
-const User = require('../../models/User');
-const Profile = require('../../models/Profile');
-const Post = require('../../models/Post');
+const User = require('../../Models/User');
+const Profile = require('../../Models/Profile');
+const Post = require('../../Models/Post');
 const mongoose = require('mongoose');
 
 // @route   POST api/posts
@@ -192,7 +192,7 @@ router.put('/unlike/:post_id', auth, async (req, res) => {
   }
 });
 
-// @route   POST api/posts/comment/:post_id
+// @route   POST api/posts/:post_id/comment
 // @desc    Comment on a post
 // @access  Private
 router.post(

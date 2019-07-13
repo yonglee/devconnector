@@ -6,9 +6,9 @@ require('dotenv').config();
 
 const auth = require('../../middleware/auth');
 
-const User = require('../../models/User');
-const Profile = require('../../models/Profile');
-const Post = require('../../models/Post');
+const User = require('../../Models/User');
+const Profile = require('../../Models/Profile');
+const Post = require('../../Models/Post');
 
 // @route   GET api/profile/me
 // @desc    Get current user's profile
