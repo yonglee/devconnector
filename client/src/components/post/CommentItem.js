@@ -11,7 +11,6 @@ const CommentItem = ({
   auth,
   deleteComment
 }) => {
-  if (!auth.loading) console.log(postId, auth.user._id, user);
   return (
     <div className="post bg-white p-1 my-1">
       <div>
