@@ -50,7 +50,7 @@ export const register = ({ name, email, password }) => async dispatch => {
       payload: res.data
     });
     dispatch(loadUser());
-    // dispatch(setAlert('You have successfully registered', 'success'));
+    dispatch(setAlert('You have successfully registered', 'success'));
   } catch (err) {
     const errors = err.response.data.errors;
 
@@ -82,12 +82,12 @@ export const login = ({ email, password }) => async dispatch => {
       payload: res.data
     });
     dispatch(loadUser());
-    // dispatch(setAlert('You have successfully logged in', 'success'));
+    dispatch(setAlert('You have successfully logged in', 'success'));
   } catch (err) {
     const errors = err.response.data.errors;
-
+    console.log(errors);
     if (errors) {
-      errors.forEach(error => dispatch(setAlert(err.msg, 'danger')));
+      errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
     }
 
     dispatch({
