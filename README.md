@@ -1,9 +1,10 @@
 # devconnector
 
-Mern Stack
+Mern Stack backend: Mongodb, nodejs, expressjs (REST api)
 
-before deploying to heroku with
-git push heroku master
+frontend: Reactjs, Redux
 
-run
-heroku config:set $(cat .env | sed '/^$/d; /#[[:print:]]\*\$/d')
+check production at https://thawing-basin-69944.herokuapp.com
+
+before deploying to heroku with git push heroku master
+heroku config:set $(cat .env | sed '/^$/d; /#[[:print:]]\*\$/d') for .env
